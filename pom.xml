@@ -73,9 +73,6 @@
         <!-- https://github.com/kangarko/ChatControl-Pro/wiki/Developer-API -->
         <massiveMineverseChatVersion>2.20.2</massiveMineverseChatVersion>
 
-        <!-- http://repo.mikeprimm.com/us/dynmap/dynmap/ -->
-        <massiveDynmapVersion>3.1-beta5</massiveDynmapVersion>
-
         <!-- ~~~~~~~~~~~~~~~ -->
         <!-- Custom Versions -->
         <!-- ~~~~~~~~~~~~~~~ -->
@@ -304,6 +301,12 @@
                 <artifactId>worldedit-core</artifactId>
                 <version>${massiveWorldEditVersion}</version>
                 <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bstats</groupId>
+                        <artifactId>bstats-bukkit</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
@@ -311,6 +314,12 @@
                 <artifactId>worldedit-bukkit</artifactId>
                 <version>${massiveWorldEditVersion}</version>
                 <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bstats</groupId>
+                        <artifactId>bstats-bukkit</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!--
                 Page: https://dev.bukkit.org/projects/worldguard/files
@@ -322,12 +331,24 @@
                 <artifactId>worldguard-core</artifactId>
                 <version>${massiveWorldGuardVersion}</version>
                 <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bstats</groupId>
+                        <artifactId>bstats-bukkit</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.sk89q.worldguard</groupId>
                 <artifactId>worldguard-bukkit</artifactId>
                 <version>${massiveWorldGuardVersion}</version>
                 <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bstats</groupId>
+                        <artifactId>bstats-bukkit</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.comphenix.protocol</groupId>
@@ -343,59 +364,17 @@
             </dependency>
 
             <dependency>
-              <groupId>me.clip</groupId>
-              <artifactId>placeholderapi</artifactId>
-              <version>${massivePlaceholderAPIVersion}</version>
-              <scope>provided</scope>
+                  <groupId>me.clip</groupId>
+                  <artifactId>placeholderapi</artifactId>
+                  <version>${massivePlaceholderAPIVersion}</version>
+                  <scope>provided</scope>
+                  <exclusions>
+                      <exclusion>
+                          <groupId>org.bstats</groupId>
+                          <artifactId>bstats-bukkit</artifactId>
+                      </exclusion>
+                  </exclusions>
             </dependency>
-
-            <!-- Custom - Custom artifacts. Manually installed by command. -->
-            <!--
-                Not everyone has a Maven repo.
-                In fact some developers don't use Maven at all.
-                Such dependencies must be manually downloaded and installed by command.
-                Depending on what project you are compiling you may need to run some of the commands below.
-                Factions will for example require manual HeroChat installation.
-                You won't need most of these dependencies installed.
-                Most are used in closed source MassiveCraft plugins.
-            -->
-
-            <!--
-                Page: https://www.spigotmc.org/resources/dynmap.274/
-                Intall: mvn install:install-file -DgroupId=us.dynmap -DartifactId=dynmap -Dversion=3.1-beta5 -Dpackaging=jar -Dfile=Dynmap-3.1-beta5-spigot.jar
-                Test: mvn dependency:get -Dartifact=us.dynmap:dynmap:3.1-beta5
-            -->
-            <dependency>
-              <groupId>us.dynmap</groupId>
-              <artifactId>dynmap</artifactId>
-              <version>${massiveDynmapVersion}</version>
-              <scope>provided</scope>
-            </dependency>
-
-            <!--
-                Page: https://www.spigotmc.org/resources/lwc-unofficial-entity-locking.2162/history
-                File: https://www.spigotmc.org/resources/lwc-unofficial-entity-locking.2162/download?version=131362
-                Intall: mvn install:install-file -DgroupId=com.griefcraft -DartifactId=lwc -Dversion=2.1.1 -Dpackaging=jar -Dfile=EntityLWC.jar
-                Test: mvn dependency:get -Dartifact=com.griefcraft:lwc:2.1.1
-            -->
-            <dependency>
-                <groupId>com.griefcraft</groupId>
-                <artifactId>lwc</artifactId>
-                <version>${massiveLwcVersion}</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <!--
-                Page: https://www.spigotmc.org/resources/venturechat.771/
-                Intall: mvn install:install-file -DgroupId=mineverse.Aust1n46.chat -DartifactId=MineverseChat -Dversion=2.20.2 -Dpackaging=jar -Dfile=VentureChat2.22.2.jar
-                Test: mvn dependency:get -Dartifact=mineverse.Aust1n46.chat:MineverseChat:2.20.2
-            -->
-            <dependency>
-                <groupId>mineverse.Aust1n46.chat</groupId>
-                <artifactId>MineverseChat</artifactId>
-                <version>${massiveMineverseChatVersion}</version>
-                <scope>provided</scope>
-            </dependency><!-- https://github.com/kangarko/ChatControl-Pro/wiki/Developer-API -->
 
             <!-- NMS - Full Spigot servers including NMS that may not be distributed. -->
             <!-- This section is relevant to supporting multiple minecraft versions for plugins using NMS. -->
