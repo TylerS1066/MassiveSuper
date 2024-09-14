@@ -1,3 +1,6 @@
 [submodule "MassiveCore"]
 	path = MassiveCore
 	url = https://github.com/TylerS1066/MassiveCore.git
+[submodule "Factions"]
+	path = Factions
+	url = https://github.com/TylerS1066/Factions.git
