@@ -1,0 +1,3 @@
+[submodule "MassiveCore"]
+	path = MassiveCore
+	url = https://github.com/TylerS1066/MassiveCore.git
